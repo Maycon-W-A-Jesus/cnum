@@ -6,6 +6,12 @@ Raiz de equação quadratica
 import math
 
 def zeros(a, b, c):
+    if a == 0:
+        if b == 0:
+            raise ValueError("A equação não é de segundo grau")     
+        else:
+            return [-c/b]
+
     delta = b **2 - (4*a*c)
     if delta < 0:
         return None
