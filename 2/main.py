@@ -95,12 +95,3 @@ def plot(n: int) -> None:
 ...
 
 def main():
-    ...
-    plot(35)
-    Submeta a branch para o servidor:
-
-git add .
-git commit -m "Semana 2"
-git push origin semana2
-
-
