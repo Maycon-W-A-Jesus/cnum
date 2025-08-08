@@ -1,4 +1,4 @@
-# Atividade 01: Verifica se um número é perfeito
+# Atividade 01:
 def is_perfect(n: int) -> bool:
     if n < 1:
         return False
@@ -11,7 +11,7 @@ def is_perfect(n: int) -> bool:
     return sum_divisors == n
 
 
-# Atividade 02: Calcula o fatorial de um número
+# Atividade 02:
 def factorial(n: int) -> int:
     if n < 0:
         raise ValueError("O número deve ser não negativo.")
@@ -24,8 +24,7 @@ def factorial(n: int) -> int:
 
     return result
 
-
-# Atividade 03: Verifica se um número é primo
+# Atividade 03:
 def is_prime(n: int) -> bool:
     if n < 2:
         return False
@@ -36,45 +35,72 @@ def is_prime(n: int) -> bool:
 
     return True
 
-
-# Atividade 04: Soma os dígitos de um número
+# Atividade 04:
 def sum_of_digits(n: int) -> int:
     if n < 0:
         raise ValueError("O número deve ser não negativo.")
 
     return sum(int(digit) for digit in str(n))
 
-
-# Função principal com testes
 def main():
-    # Testes da Atividade 01
-    assert is_perfect(6) == True
-    assert is_perfect(7) == False
-    assert is_perfect(-1) == False
+   
+    #Atividade 05
+    
+    #Definindo as matrizes
+    A = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    # Testes da Atividade 02
-    assert factorial(5) == 120
-    assert factorial(0) == 1
-    try:
-        factorial(-1)
-    except ValueError as error:
-        assert str(error) == "O número deve ser não negativo."
+    B = np.array([[11, 12, 13],
+                  [14, 15, 16],
+                  [17, 18, 19]])
 
-    # Testes da Atividade 03
-    assert is_prime(7) == True
-    assert is_prime(10) == False
+    # Produto matricial
+    C = A @ B
 
-    # Testes da Atividade 04
-    assert sum_of_digits(123) == 6
-    try:
-        sum_of_digits(-1)
-    except ValueError as error:
-        assert str(error) == "O número deve ser não negativo."
+    # Exibindo os resultados
+    print("Resultado do produto matricula:")
+    print(C)
+    print("\nFormato da matriz (shape):", C.shape)  # (linhas, colunas)
+    print("Quantidade total de elementos (size):", C.size)
+    print("Quantidade de linhas (len):", len(C))
 
-    print("Todos os testes passaram com sucesso!")
+main()  
+
+#Atividade 06
+#pip install matplotlib
+...
+import matplotlib.pyplot as plt
+...
+
+def plot(n: int) -> None:
+    x = np.linspace(-np.pi, np.pi, n)   # n valores entre -pi e pi
+    y_sen = np.sin(x)                   # array senos dos valores de x
+    y_cos = np.cos(x)                   # array cossenos dos valores de x
+
+    plt.plot(x, y_sen, label='seno')
+    plt.plot(x, y_cos, label='cosseno')
+    plt.xlim(-np.pi, np.pi)
+
+    plt.xlabel('Ângulo [rad]')
+    plt.ylabel('Função trigonométrica(x)')
+    plt.grid(True)
+    plt.legend()
+    plt.savefig("plot.png")  # Salva como imagem no ambiente
+
+    print(f'x =\n{x}')
+    print(f'y_sen =\n{y_sen}')
+    print(f'y_cos =\n{y_cos}')
+
+...
+
+def main():
+    ...
+    plot(35)
+    Submeta a branch para o servidor:
+
+git add .
+git commit -m "Semana 2"
+git push origin semana2
 
 
-if __name__ == "__main__":
-    main()
-
-        #Atividade 05
