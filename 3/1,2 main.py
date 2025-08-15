@@ -73,5 +73,13 @@ def main():
         resultado, n_final, delta = exp_limit(x)
         print(f"x = {x:+.1f} → e^x ≈ {resultado:.16g} (math.exp = {math.exp(x):.16g}, n = {n_final})")
 
+    for val in [10.0, -20.0]:
+    y, k, n = exp_series_scaling(val, theta=1.0)
+    print(f"x={val:+g} -> e^x ≈ {y:.6e} (math.exp={math.exp(val):.6e})  [k={k}, termos série(m)={n}]")    
+
 if __name__ == "__main__":
     main()
+
+  
+
+
