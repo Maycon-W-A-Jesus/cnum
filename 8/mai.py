@@ -101,7 +101,7 @@ def atividade3():
     ], dtype=float)
     B = np.array([100.0, 100.0], dtype=float)
     I = seidel(A, B)
-    IR3 = I[0] - I[1]
+    IR3 = I[0] + I[1]
     print("\n🔹 Atividade 3: Corrente no resistor R3")
     print(f"I1 = {I[0]:.4f}, I2 = {I[1]:.4f}")
     print(f"IR3 = {IR3:.4f} A")
