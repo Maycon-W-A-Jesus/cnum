@@ -30,7 +30,7 @@ B = np.array([100.0, 100.0], dtype=float)
 I = seidel(A, B, k=100, TOL=1e-8)
 
 # Corrente no resistor R3 é a diferença entre I1 e I2
-IR3 = I[0] - I[1]
+IR3 = I[0] + I[1]
 
 if __name__ == "__main__":
     print(f"I1 = {I[0]:.4f}, I2 = {I[1]:.4f}")
